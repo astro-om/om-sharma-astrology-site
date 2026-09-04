@@ -154,14 +154,16 @@
   .servicegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
   .svc-card{
     background:var(--surface);padding:28px 24px;border-radius:20px;border:1px solid var(--line);
-    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;cursor:pointer;
   }
   .svc-card:hover{transform:translateY(-6px) scale(1.015);box-shadow:0 20px 40px rgba(14,128,116,.14);border-color:var(--teal);}
   .svc-icon{width:42px;height:42px;border-radius:12px;background:var(--teal-tint);color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:16px;transition:transform .25s ease, background .25s ease, color .25s ease;}
   .svc-card:hover .svc-icon{background:var(--teal);color:#fff;transform:rotate(-8deg) scale(1.08);}
   .svc-card h3{font-size:1.1rem;margin-bottom:8px;font-weight:700;}
   .svc-card p{color:var(--ink-soft);font-size:.86rem;margin-bottom:14px;}
-  .svc-price{font-size:.82rem;color:var(--coral-deep);font-weight:700;}
+  .svc-price{font-size:.82rem;color:var(--coral-deep);font-weight:700;display:flex;align-items:center;justify-content:space-between;}
+  .svc-price .book-hint{font-size:.72rem;color:var(--teal-deep);font-weight:600;opacity:0;transition:opacity .2s ease;}
+  .svc-card:hover .book-hint{opacity:1;}
   .pricenote{text-align:center;color:var(--ink-soft);font-size:.8rem;margin-top:30px;}
 
   /* TESTIMONIALS */
@@ -298,7 +300,7 @@
       <h1>Clarity for life's <span>biggest questions.</span></h1>
       <p>Om Sharma Shastri brings 40+ years of family tradition in Vedic astrology — janmapatrika, hastarekha, vastu shanti, and guidance on marriage, career and life's obstacles — in person in Nagpur or on a call from anywhere.</p>
       <div class="btnrow">
-        <a href="https://wa.me/919373102808" class="btn-primary">💬 Chat on WhatsApp</a>
+        <a href="https://wa.me/919112271345" class="btn-primary">💬 Chat on WhatsApp</a>
         <a href="#services" class="btn-ghost">View Services</a>
       </div>
     </div>
@@ -405,12 +407,12 @@
       <p>Each session is one-on-one, in person or on a call, with a follow-up summary of remedies discussed.</p>
     </div>
     <div class="servicegrid">
-      <div class="svc-card"><div class="svc-icon">✦</div><h3>जन्मपत्रिका (Kundli Reading)</h3><p>Full birth chart analysis covering career, health, finance and relationships.</p><div class="svc-price">₹501 onwards</div></div>
-      <div class="svc-card"><div class="svc-icon">✦</div><h3>हस्तरेखा (Palmistry)</h3><p>Palm reading for life path, career and relationship guidance.</p><div class="svc-price">₹501 onwards</div></div>
-      <div class="svc-card"><div class="svc-icon">✦</div><h3>वास्तुशांती (Vastu Shanti)</h3><p>Home and office vastu review and shanti ritual, on-site.</p><div class="svc-price">₹1,100 onwards</div></div>
-      <div class="svc-card"><div class="svc-icon">✦</div><h3>हवन पुजन व अनुष्ठान</h3><p>Havan, puja and anushthan for specific life goals and remedies.</p><div class="svc-price">₹1,100 onwards</div></div>
-      <div class="svc-card"><div class="svc-icon">✦</div><h3>नवग्रह शांतिपाठ व यंत्रसिद्धी</h3><p>Navagraha shanti path and yantra siddhi for planetary remedies.</p><div class="svc-price">₹1,100 onwards</div></div>
-      <div class="svc-card"><div class="svc-icon">✦</div><h3>विवाह, नौकरी व बाधा निवारण</h3><p>Guidance and remedies for marriage, job matters and obstacle removal.</p><div class="svc-price">₹501 onwards</div></div>
+      <div class="svc-card" onclick="bookService('जन्मपत्रिका (Kundli Reading)','₹501 onwards')"><div class="svc-icon">✦</div><h3>जन्मपत्रिका (Kundli Reading)</h3><p>Full birth chart analysis covering career, health, finance and relationships.</p><div class="svc-price">₹501 onwards <span class="book-hint">Tap to book →</span></div></div>
+      <div class="svc-card" onclick="bookService('हस्तरेखा (Palmistry)','₹501 onwards')"><div class="svc-icon">✦</div><h3>हस्तरेखा (Palmistry)</h3><p>Palm reading for life path, career and relationship guidance.</p><div class="svc-price">₹501 onwards <span class="book-hint">Tap to book →</span></div></div>
+      <div class="svc-card" onclick="bookService('वास्तुशांती (Vastu Shanti)','₹1,100 onwards')"><div class="svc-icon">✦</div><h3>वास्तुशांती (Vastu Shanti)</h3><p>Home and office vastu review and shanti ritual, on-site.</p><div class="svc-price">₹1,100 onwards <span class="book-hint">Tap to book →</span></div></div>
+      <div class="svc-card" onclick="bookService('हवन पुजन व अनुष्ठान','₹1,100 onwards')"><div class="svc-icon">✦</div><h3>हवन पुजन व अनुष्ठान</h3><p>Havan, puja and anushthan for specific life goals and remedies.</p><div class="svc-price">₹1,100 onwards <span class="book-hint">Tap to book →</span></div></div>
+      <div class="svc-card" onclick="bookService('नवग्रह शांतिपाठ व यंत्रसिद्धी','₹1,100 onwards')"><div class="svc-icon">✦</div><h3>नवग्रह शांतिपाठ व यंत्रसिद्धी</h3><p>Navagraha shanti path and yantra siddhi for planetary remedies.</p><div class="svc-price">₹1,100 onwards <span class="book-hint">Tap to book →</span></div></div>
+      <div class="svc-card" onclick="bookService('विवाह, नौकरी व बाधा निवारण','₹501 onwards')"><div class="svc-icon">✦</div><h3>विवाह, नौकरी व बाधा निवारण</h3><p>Guidance and remedies for marriage, job matters and obstacle removal.</p><div class="svc-price">₹501 onwards <span class="book-hint">Tap to book →</span></div></div>
     </div>
     <p class="pricenote">Prices are indicative — final pricing confirmed with Panditji before starting.</p>
   </div>
@@ -436,7 +438,7 @@
   <div class="booking">
     <h2>Ready for your consultation?</h2>
     <p>Message directly on WhatsApp with your date, time and place of birth to book a slot.</p>
-    <a href="https://wa.me/919373102808" class="whatsapp-btn">💬 Message on WhatsApp</a>
+    <a href="https://wa.me/919112271345" class="whatsapp-btn">💬 Message on WhatsApp</a>
   </div>
 </section>
 
@@ -510,8 +512,8 @@
 </footer>
 
 <div class="mobilebar">
-  <a href="tel:+919373102808" class="call-btn">📞 Call Panditji</a>
-  <a href="https://wa.me/919373102808" class="wa-btn">💬 WhatsApp Booking</a>
+  <a href="tel:+919112271345" class="call-btn">📞 Call Panditji</a>
+  <a href="https://wa.me/919112271345" class="wa-btn">💬 WhatsApp Booking</a>
 </div>
 
 <script>
@@ -537,6 +539,12 @@
     });
   }, {threshold: 0.4});
   counters.forEach(c => counterObserver.observe(c));
+
+  // Service card click-to-book via WhatsApp
+  function bookService(serviceName, price){
+    const msg = `Hi, I would like to book *${serviceName}* (${price}). Please share details on how to proceed.`;
+    window.open(`https://wa.me/919112271345?text=${encodeURIComponent(msg)}`, '_blank');
+  }
 
   // 2. Rashiphal Selector Logic
   const rashiData = {
@@ -605,7 +613,7 @@
       `*Type:* ${encodeURIComponent(type)}%0A` +
       `*Query:* ${encodeURIComponent(query || 'N/A')}`;
 
-    window.open(`https://wa.me/919373102808?text=${textMessage}`, '_blank');
+    window.open(`https://wa.me/919112271345?text=${textMessage}`, '_blank');
   });
 </script>
 
